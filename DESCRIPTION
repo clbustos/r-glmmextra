@@ -13,3 +13,4 @@ LazyData: true
 Collate:
     'glmmextra-package.r'
     'lmmR2.r'
+    'centerOnGroup.r'
