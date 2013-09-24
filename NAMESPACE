@@ -1,0 +1,4 @@
+export(lmmR2)
+export(print.lmmR2)
+export(print.summary.lmmR2)
+export(summary.lmmR2)

@@ -1,0 +1,15 @@
+Package: glmmextra
+Title: 
+Description: 
+Version: 0.1
+Authors@R: c(person("Claudio Bustos",
+    "Developer",role=c("aut","cre")),email="clbustos_at_gmail_dot_com")
+Author: Claudio Bustos
+Maintainer: Claudio Bustos <clbustos@gmail.com>
+Depends:
+    R (>= 3.0.1)
+License: GPL-2
+LazyData: true
+Collate:
+    'glmmextra-package.r'
+    'lmmR2.r'
