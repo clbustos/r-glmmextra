@@ -1,6 +1,6 @@
 Package: glmmextra
-Title: 
-Description: 
+Title: Extra methods for LMM methods
+Description: Some extra methods for lme4
 Version: 0.1
 Authors@R: c(person("Claudio Bustos",
     "Developer",role=c("aut","cre")),email="clbustos_at_gmail_dot_com")

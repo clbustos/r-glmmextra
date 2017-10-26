@@ -8,7 +8,7 @@
 lmmR2<-function(m.null, m.full) {
 	if(is(m.null,"lme"))	 {
 		return(lmmR2.lme(m.null,m.full))
-	} else if (class(m.null)=="mer") {
+	} else if (class(m.null)=="mer" | class(m.null)=="lmerMod" | class(m.null)=="lmerTest") {
 		return(lmmR2.mer(m.null,m.full))
 	} else {
 		stop("Not implemented for other classes than lme or lmer") 
@@ -103,7 +103,7 @@ lmmR2.lme<-function(m.null,m.full) {
 
 #' @export
 print.lmmR2<-function(x) {
-	summary.lmmR2(x)
+	print(summary.lmmR2(x))
 }
 
 #' @export
@@ -120,7 +120,11 @@ print.summary.lmmR2<-function(xx) {
 
 #' @export
 summary.lmmR2<-function(x) {
-	m1<-data.frame(avg.size=c(1,x$nn),null=c(x$sigmas[1],x$t0),full=c(x$sigmas[2],x$t1))
+  
+  v.null<-c(x$sigmas[1],x$t0)
+  v.full<-c(x$sigmas[2],x$t1)
+  
+	m1<-data.frame(avg.size=c(1,x$nn),null=v.null, null.r=v.null/(sum(v.null)),  full=v.full, pseudo.r2= 1-(v.full/v.null) )
 	#cat("Variances:\n")
 	rownames(m1)[1]<-"Residual"
 	#print(m1)
